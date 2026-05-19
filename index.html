@@ -1,0 +1,1047 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahmad Khanif Izzah Arifin - Aspiring Developer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind Config & CDN -->
+    <script src="tailwind.config.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- Loading Screen -->
+    <div id="loader">
+      <div
+        style="
+          font-family: &quot;DM Mono&quot;, monospace;
+          font-size: 0.75rem;
+          letter-spacing: 0.15em;
+          color: #3a3a50;
+          margin-bottom: 32px;
+          text-transform: uppercase;
+        "
+      >
+        Initializing
+      </div>
+      <div style="width: 220px; margin-bottom: 16px" class="count-bar">
+        <div id="loader-bar" class="count-bar-inner"></div>
+      </div>
+      <div
+        id="loader-count"
+        style="
+          font-family: &quot;DM Mono&quot;, monospace;
+          font-size: 2rem;
+          font-weight: 300;
+          color: #c8f05a;
+          letter-spacing: -0.03em;
+        "
+      >
+        000
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 px-8 py-5 flex items-center justify-between"
+      style="
+        background: linear-gradient(
+          to bottom,
+          rgba(5, 5, 8, 0.95) 0%,
+          transparent 100%
+        );
+        backdrop-filter: blur(12px);
+      "
+    >
+      <a
+        href="#"
+        class="font-mono text-sm"
+        style="color: #c8f05a; letter-spacing: 0.08em"
+        >YN<span style="color: #3a3a50">_DEV</span></a
+      >
+      <div class="hidden md:flex items-center gap-8">
+        <a
+          href="#about"
+          class="nav-link font-body text-sm"
+          style="color: #6b6b88; letter-spacing: 0.05em"
+          >About</a
+        >
+        <a
+          href="#projects"
+          class="nav-link font-body text-sm"
+          style="color: #6b6b88; letter-spacing: 0.05em"
+          >Projects</a
+        >
+        <a
+          href="#skills"
+          class="nav-link font-body text-sm"
+          style="color: #6b6b88; letter-spacing: 0.05em"
+          >Skills</a
+        >
+        <!-- <a href="#blog" class="nav-link font-body text-sm" style="color:#6b6b88; letter-spacing:0.05em;">Blog</a> -->
+        <a
+          href="#contact"
+          class="nav-link font-body text-sm"
+          style="color: #6b6b88; letter-spacing: 0.05em"
+          >Contact</a
+        >
+      </div>
+      <a href="#contact" class="btn-magnetic text-xs"><span>Hire me</span></a>
+    </nav>
+
+    <main>
+      <!-- HERO -->
+      <section
+        id="hero"
+        class="relative min-h-screen flex flex-col justify-end pb-20 px-8 md:px-16 overflow-hidden"
+      >
+        <!-- Ambient orbs -->
+        <div
+          class="orb"
+          style="
+            width: 500px;
+            height: 500px;
+            background: rgba(200, 240, 90, 0.06);
+            top: -100px;
+            right: -100px;
+          "
+        ></div>
+        <div
+          class="orb"
+          style="
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 245, 255, 0.04);
+            bottom: 100px;
+            left: 10%;
+            animation: float 8s ease-in-out infinite;
+          "
+        ></div>
+        <div
+          class="orb"
+          style="
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 0, 110, 0.03);
+            top: 40%;
+            left: 50%;
+            animation: float 10s ease-in-out infinite reverse;
+          "
+        ></div>
+
+        <!-- Grid lines -->
+        <div
+          style="
+            position: absolute;
+            inset: 0;
+            background-image:
+              linear-gradient(rgba(200, 240, 90, 0.025) 1px, transparent 1px),
+              linear-gradient(
+                90deg,
+                rgba(200, 240, 90, 0.025) 1px,
+                transparent 1px
+              );
+            background-size: 80px 80px;
+            pointer-events: none;
+          "
+        ></div>
+
+        <!-- Corner labels -->
+        <div
+          class="font-mono text-xs absolute top-24 left-8 md:left-16"
+          style="color: #3a3a50; letter-spacing: 0.12em"
+        >
+          ASPIRING DEVELOPER
+        </div>
+        <div
+          class="font-mono text-xs absolute top-24 right-8 md:right-16 text-right"
+          style="color: #3a3a50; letter-spacing: 0.12em"
+        >
+          AVAILABLE FOR WORK
+        </div>
+
+        <!-- Main headline -->
+        <div style="position: relative; z-index: 2">
+          <div class="section-tag mb-6 reveal">[ 01 — HERO ]</div>
+          <h1
+            class="font-display font-extrabold leading-none mb-6 reveal reveal-delay-1 glitch max-w-4xl"
+            data-text="Ahmad Khanif Izzah Arifin"
+            style="
+              font-size: clamp(2rem, 6vw, 5.5rem);
+              color: #e8e8f0;
+              letter-spacing: -0.04em;
+              line-height: 1.1;
+            "
+          >
+            Ahmad Khanif Izzah Arifin
+          </h1>
+          <p
+            class="font-body text-lg md:text-xl reveal reveal-delay-2 max-w-2xl"
+            style="color: #6b6b88; line-height: 1.7"
+          >
+            Iam an aspiring Developer from Universitas Sulawesi Barat.<br />
+            <span style="color: #a0a0b8"
+              >Currently crafting things that matter from
+              <span style="color: #c8f05a">Majene, Indonesia</span>.</span
+            >
+          </p>
+          <div class="flex items-center gap-6 mt-10 reveal reveal-delay-3">
+            <a href="#projects" class="btn-magnetic"
+              ><span>View Work →</span></a
+            >
+            <a
+              href="#contact"
+              class="font-mono text-sm hover:text-accent transition-colors"
+              style="color: #6b6b88; letter-spacing: 0.05em; color: #6b6b88"
+              >Let's talk</a
+            >
+          </div>
+        </div>
+
+        <!-- Floating terminal snippet -->
+        <div
+          class="hidden lg:block absolute right-16 bottom-24 reveal reveal-delay-4"
+          style="
+            width: 320px;
+            background: #111118;
+            border: 1px solid #1e1e2a;
+            padding: 20px 24px;
+            font-family: &quot;DM Mono&quot;, monospace;
+          "
+        >
+          <div style="display: flex; gap: 6px; margin-bottom: 16px">
+            <div
+              style="
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: #ff5f56;
+              "
+            ></div>
+            <div
+              style="
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: #ffbd2e;
+              "
+            ></div>
+            <div
+              style="
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: #27c93f;
+              "
+            ></div>
+          </div>
+          <div style="font-size: 0.72rem; line-height: 2; color: #3a3a50">
+            <span style="color: #c8f05a">$</span>
+            <span style="color: #a0a0b8">whoami</span><br />
+            <span style="color: #e8e8f0">Ahmad Khanif Izzah Arifin</span
+            ><br /><br />
+            <span style="color: #c8f05a">$</span>
+            <span style="color: #a0a0b8">cat skills.txt</span><br />
+            <span style="color: #6b6b88">Laravel · Flutter · Figma</span><br />
+            <span style="color: #6b6b88">MySQL · Docker · AWS</span><br /><br />
+            <span style="color: #c8f05a">$</span>
+            <span style="color: #a0a0b8">status</span><br />
+            <span style="color: #27c93f">● </span
+            ><span style="color: #e8e8f0">Open to opportunities</span
+            ><span class="animate-cursor-blink" style="color: #c8f05a">_</span>
+          </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div
+          class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 reveal"
+        >
+          <div
+            class="font-mono text-xs"
+            style="color: #3a3a50; letter-spacing: 0.15em"
+          >
+            SCROLL
+          </div>
+          <div
+            style="
+              width: 1px;
+              height: 48px;
+              background: linear-gradient(
+                to bottom,
+                rgba(200, 240, 90, 0.6),
+                transparent
+              );
+            "
+          ></div>
+        </div>
+      </section>
+
+      <!-- MARQUEE -->
+      <div
+        style="
+          border-top: 1px solid #1e1e2a;
+          border-bottom: 1px solid #1e1e2a;
+          padding: 12px 0;
+          overflow: hidden;
+          background: #0c0c12;
+        "
+      >
+        <div
+          class="animate-marquee whitespace-nowrap inline-flex gap-16"
+          style="
+            font-family: &quot;Syne&quot;, sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.18em;
+            color: #1e1e2a;
+          "
+        >
+          <span>WEB DEVELOPER</span><span style="color: #c8f05a">✦</span>
+          <span>LARAVEL &amp; FLUTTER</span
+          ><span style="color: #c8f05a">✦</span>
+          <span>NODE.JS &amp; EXPRESS</span
+          ><span style="color: #c8f05a">✦</span>
+          <span>POSTGRESQL &amp; MONGODB</span
+          ><span style="color: #c8f05a">✦</span>
+          <span>DOCKER &amp; KUBERNETES</span
+          ><span style="color: #c8f05a">✦</span>
+          <span>AWS &amp; CLOUD INFRA</span
+          ><span style="color: #c8f05a">✦</span>
+          <span>REST &amp; GRAPHQL APIs</span
+          ><span style="color: #c8f05a">✦</span> <span>ANDROID DEVELOPER</span
+          ><span style="color: #c8f05a">✦</span>
+          <span>LARAVEL &amp; FLUTTER</span
+          ><span style="color: #c8f05a">✦</span>
+          <span>NODE.JS &amp; EXPRESS</span
+          ><span style="color: #c8f05a">✦</span> <span>MySQL &amp; MONGODB</span
+          ><span style="color: #c8f05a">✦</span>
+          <span>DOCKER &amp; KUBERNETES</span
+          ><span style="color: #c8f05a">✦</span>
+          <span>AWS &amp; CLOUD INFRA</span
+          ><span style="color: #c8f05a">✦</span>
+          <span>REST &amp; GRAPHQL APIs</span
+          ><span style="color: #c8f05a">✦</span>
+        </div>
+      </div>
+
+      <section id="about" class="px-8 md:px-16 py-32 relative">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <div class="section-tag mb-6 reveal">[ 02 — ABOUT ]</div>
+              <h2
+                class="font-display font-bold mb-8 reveal reveal-delay-1"
+                style="
+                  font-size: clamp(2rem, 5vw, 3.5rem);
+                  color: #e8e8f0;
+                  letter-spacing: -0.03em;
+                  line-height: 1.1;
+                "
+              >
+                Building systems<br /><span style="color: #c8f05a"
+                  >that scale.</span
+                >
+              </h2>
+              <div class="space-y-5 reveal reveal-delay-2">
+                <p
+                  class="font-body"
+                  style="color: #6b6b88; line-height: 1.9; font-size: 1rem"
+                >
+                  I'm an aspiring developer with a strong bias toward clean
+                  architecture, performance, and developer experience. I thrive
+                  at the intersection of backend logic and frontend craft.
+                </p>
+                <p
+                  class="font-body"
+                  style="color: #6b6b88; line-height: 1.9; font-size: 1rem"
+                >
+                  From designing a database schema to shipping a polished UI — I
+                  own the full delivery chain. I believe good software is
+                  invisible to the user and obvious to the next developer.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-3 gap-4 mt-12 reveal reveal-delay-3">
+                <div style="border-top: 1px solid #1e1e2a; padding-top: 16px">
+                  <div
+                    class="font-display font-bold text-3xl"
+                    style="color: #c8f05a"
+                  >
+                    3+
+                  </div>
+                  <div
+                    class="font-mono text-xs mt-1"
+                    style="color: #3a3a50; letter-spacing: 0.1em"
+                  >
+                    YEARS EXP
+                  </div>
+                </div>
+                <div style="border-top: 1px solid #1e1e2a; padding-top: 16px">
+                  <div
+                    class="font-display font-bold text-3xl"
+                    style="color: #c8f05a"
+                  >
+                    5+
+                  </div>
+                  <div
+                    class="font-mono text-xs mt-1"
+                    style="color: #3a3a50; letter-spacing: 0.1em"
+                  >
+                    PROJECTS
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal reveal-delay-2">
+              <div
+                style="
+                  position: relative;
+                  aspect-ratio: 3/4;
+                  background: #111118;
+                  border: 1px solid #1e1e2a;
+                  overflow: hidden;
+                  max-height: 460px;
+                "
+              >
+                <img
+                  src="assets/ETR06798-min.jpg"
+                  alt="Ahmad Khanif Izzah Arifin"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    opacity: 0.9;
+                    filter: contrast(1.05);
+                  "
+                />
+
+                <div
+                  style="
+                    position: absolute;
+                    top: 12px;
+                    left: 12px;
+                    width: 20px;
+                    height: 20px;
+                    border-top: 1px solid #c8f05a;
+                    border-left: 1px solid #c8f05a;
+                  "
+                ></div>
+                <div
+                  style="
+                    position: absolute;
+                    top: 12px;
+                    right: 12px;
+                    width: 20px;
+                    height: 20px;
+                    border-top: 1px solid #c8f05a;
+                    border-right: 1px solid #c8f05a;
+                  "
+                ></div>
+                <div
+                  style="
+                    position: absolute;
+                    bottom: 12px;
+                    left: 12px;
+                    width: 20px;
+                    height: 20px;
+                    border-bottom: 1px solid #c8f05a;
+                    border-left: 1px solid #c8f05a;
+                  "
+                ></div>
+                <div
+                  style="
+                    position: absolute;
+                    bottom: 12px;
+                    right: 12px;
+                    width: 20px;
+                    height: 20px;
+                    border-bottom: 1px solid #c8f05a;
+                    border-right: 1px solid #c8f05a;
+                  "
+                ></div>
+              </div>
+
+              <div
+                style="
+                  background: #111118;
+                  border: 1px solid #1e1e2a;
+                  border-top: 0;
+                  padding: 20px 24px;
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 12px;
+                "
+              >
+                <div>
+                  <div
+                    class="font-mono text-xs"
+                    style="color: #3a3a50; letter-spacing: 0.1em"
+                  >
+                    LOCATION
+                  </div>
+                  <div class="font-body text-sm mt-1" style="color: #e8e8f0">
+                    Makassar, ID 🇮🇩
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="font-mono text-xs"
+                    style="color: #3a3a50; letter-spacing: 0.1em"
+                  >
+                    STATUS
+                  </div>
+                  <div class="font-body text-sm mt-1 flex items-center gap-2">
+                    <span
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        background: #27c93f;
+                        border-radius: 50%;
+                        display: inline-block;
+                        box-shadow: 0 0 6px #27c93f;
+                      "
+                    ></span>
+                    <span style="color: #e8e8f0">Available</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="projects"
+        class="px-8 md:px-16 py-32"
+        style="background: #0c0c12; border-top: 1px solid #1e1e2a"
+      >
+        <div class="max-w-6xl mx-auto text-center">
+          <div class="section-tag mb-4 reveal">[ 03 — PROJECTS ]</div>
+          <h2
+            class="font-display font-bold reveal reveal-delay-1"
+            style="
+              font-size: clamp(2rem, 5vw, 3.5rem);
+              color: #e8e8f0;
+              letter-spacing: -0.03em;
+            "
+          >
+            Selected Work
+          </h2>
+
+          <div
+            class="mt-16 reveal reveal-delay-2 flex flex-col items-center justify-center p-12"
+            style="
+              background: #111118;
+              border: 1px dashed #1e1e2a;
+              min-height: 300px;
+            "
+          >
+            <div
+              class="mb-6"
+              style="
+                width: 48px;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: rgba(200, 240, 90, 0.1);
+                color: #c8f05a;
+              "
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                ></path>
+              </svg>
+            </div>
+            <h3
+              class="font-display font-bold text-xl mb-3"
+              style="color: #e8e8f0"
+            >
+              Under Construction
+            </h3>
+            <p
+              class="font-body text-sm max-w-md"
+              style="color: #6b6b88; line-height: 1.7"
+            >
+              I'm currently curating and documenting my recent projects. Check
+              back soon to see case studies involving Laravel, Flutter, and IoT
+              deployments.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="skills"
+        class="px-8 md:px-16 py-32"
+        style="border-top: 1px solid #1e1e2a"
+      >
+        <div class="max-w-6xl mx-auto">
+          <div class="section-tag mb-4 reveal">[ 04 — SKILLS ]</div>
+          <h2
+            class="font-display font-bold mb-16 reveal reveal-delay-1"
+            style="
+              font-size: clamp(2rem, 5vw, 3.5rem);
+              color: #e8e8f0;
+              letter-spacing: -0.03em;
+            "
+          >
+            Tech Stack
+          </h2>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="reveal">
+              <div
+                class="font-mono text-xs mb-6 flex items-center gap-3"
+                style="color: #c8f05a; letter-spacing: 0.12em"
+              >
+                <span
+                  style="width: 20px; height: 1px; background: #c8f05a"
+                ></span
+                >DEVELOPMENT
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >Flutter</span
+                >
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >Laravel</span
+                >
+                <span class="skill-badge font-mono text-xs px-3 py-2">PHP</span>
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >JavaScript</span
+                >
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >Dart</span
+                >
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >Java</span
+                >
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >Python</span
+                >
+                <span class="skill-badge font-mono text-xs px-3 py-2">CPP</span>
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >HTML/CSS</span
+                >
+              </div>
+            </div>
+
+            <div class="reveal reveal-delay-1">
+              <div
+                class="font-mono text-xs mb-6 flex items-center gap-3"
+                style="color: #c8f05a; letter-spacing: 0.12em"
+              >
+                <span
+                  style="width: 20px; height: 1px; background: #c8f05a"
+                ></span
+                >DATABASE
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >MySQL</span
+                >
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >PostgreSQL</span
+                >
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >MongoDB</span
+                >
+              </div>
+            </div>
+
+            <div class="reveal reveal-delay-2">
+              <div
+                class="font-mono text-xs mb-6 flex items-center gap-3"
+                style="color: #c8f05a; letter-spacing: 0.12em"
+              >
+                <span
+                  style="width: 20px; height: 1px; background: #c8f05a"
+                ></span
+                >IOT & EMBEDDED
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >ESP32</span
+                >
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >Arduino</span
+                >
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >C/C++</span
+                >
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >Robotics</span
+                >
+              </div>
+            </div>
+
+            <div class="reveal reveal-delay-3">
+              <div
+                class="font-mono text-xs mb-6 flex items-center gap-3"
+                style="color: #c8f05a; letter-spacing: 0.12em"
+              >
+                <span
+                  style="width: 20px; height: 1px; background: #c8f05a"
+                ></span
+                >DESIGN & OTHERS
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >Figma</span
+                >
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >Canva</span
+                >
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >Regex</span
+                >
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >Microsoft Office</span
+                >
+                <span class="skill-badge font-mono text-xs px-3 py-2"
+                  >Google Workspace</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-24">
+            <h3
+              class="font-display font-bold text-2xl mb-12 reveal"
+              style="color: #e8e8f0"
+            >
+              Experience
+            </h3>
+            <div class="space-y-8">
+              <div
+                class="timeline-item reveal pl-8 pb-8"
+                style="position: relative"
+              >
+                <div class="timeline-dot"></div>
+                <div
+                  class="flex flex-wrap items-start justify-between gap-2 mb-2"
+                >
+                  <div>
+                    <h4
+                      class="font-display font-bold text-lg"
+                      style="color: #e8e8f0"
+                    >
+                      Intern - Mobile Consumer Branch (T-Troopers)
+                    </h4>
+                    <div class="font-body text-sm" style="color: #c8f05a">
+                      Telkomsel
+                    </div>
+                  </div>
+
+                  <span
+                    class="font-mono text-xs px-3 py-1"
+                    style="
+                      border: 1px solid #1e1e2a;
+                      color: #3a3a50;
+                      letter-spacing: 0.08em;
+                    "
+                    >Jan 2026 - Mar 2026</span
+                  >
+                </div>
+                <p
+                  class="font-body text-sm"
+                  style="color: #6b6b88; line-height: 1.8"
+                >
+                  Conducting field visits and processing complex school survey
+                  data. Utilizing advanced data manipulation and spreadsheet
+                  management techniques to cross-reference provider data.
+                </p>
+              </div>
+
+              <div
+                class="timeline-item reveal reveal-delay-1 pl-8 pb-8"
+                style="position: relative"
+              >
+                <div class="timeline-dot"></div>
+                <div
+                  class="flex flex-wrap items-start justify-between gap-2 mb-2"
+                >
+                  <div>
+                    <h4
+                      class="font-display font-bold text-lg"
+                      style="color: #e8e8f0"
+                    >
+                      Chairman
+                    </h4>
+                    <div class="font-body text-sm" style="color: #c8f05a">
+                      Informatics Study Club (ISC)
+                    </div>
+                  </div>
+                  <span
+                    class="font-mono text-xs px-3 py-1"
+                    style="
+                      border: 1px solid #1e1e2a;
+                      color: #3a3a50;
+                      letter-spacing: 0.08em;
+                    "
+                    >2025 — Present</span
+                  >
+                </div>
+                <p
+                  class="font-body text-sm"
+                  style="color: #6b6b88; line-height: 1.8"
+                >
+                  Leading the organization and orchestrating faculty-level
+                  events like Infinitec. Overseeing organizational
+                  restructuring, branding, and UI/UX projects.
+                </p>
+              </div>
+
+              <div
+                class="timeline-item reveal reveal-delay-2 pl-8 pb-8"
+                style="position: relative"
+              >
+                <div class="timeline-dot"></div>
+                <div
+                  class="flex flex-wrap items-start justify-between gap-2 mb-2"
+                >
+                  <div>
+                    <h4
+                      class="font-display font-bold text-lg"
+                      style="color: #e8e8f0"
+                    >
+                      Mobile Division Lead
+                    </h4>
+                    <div class="font-body text-sm" style="color: #c8f05a">
+                      Informatics Study Club (ISC)
+                    </div>
+                  </div>
+                  <span
+                    class="font-mono text-xs px-3 py-1"
+                    style="
+                      border: 1px solid #1e1e2a;
+                      color: #3a3a50;
+                      letter-spacing: 0.08em;
+                    "
+                    >2024 — 2025</span
+                  >
+                </div>
+                <p
+                  class="font-body text-sm"
+                  style="color: #6b6b88; line-height: 1.8"
+                >
+                  Led the mobile development division, guiding the team in
+                  building applications using Flutter and ensuring best
+                  practices in mobile architecture.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section
+        id="contact"
+        class="px-8 md:px-16 py-32 relative"
+        style="border-top: 1px solid #1e1e2a"
+      >
+        <div
+          class="orb"
+          style="
+            width: 400px;
+            height: 400px;
+            background: rgba(200, 240, 90, 0.04);
+            bottom: -100px;
+            right: -100px;
+          "
+        ></div>
+        <div class="max-w-6xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-16 items-start">
+            <!-- Left -->
+            <div>
+              <div class="section-tag mb-4 reveal">[ 05 — CONTACT ]</div>
+              <h2
+                class="font-display font-bold mb-6 reveal reveal-delay-1"
+                style="
+                  font-size: clamp(2rem, 5vw, 3.5rem);
+                  color: #e8e8f0;
+                  letter-spacing: -0.03em;
+                  line-height: 1;
+                "
+              >
+                Let's build<br /><span style="color: #c8f05a">something.</span>
+              </h2>
+              <p
+                class="font-body mb-12 reveal reveal-delay-2"
+                style="color: #6b6b88; line-height: 1.9"
+              >
+                Open to full-time roles, freelance projects, and interesting
+                conversations. If you have a problem worth solving, let's talk.
+              </p>
+              <div class="space-y-6 reveal reveal-delay-3">
+                <div>
+                  <div
+                    class="font-mono text-xs mb-1"
+                    style="color: #3a3a50; letter-spacing: 0.1em"
+                  >
+                    EMAIL
+                  </div>
+                  <a
+                    href="mailto:hello@yourname.dev"
+                    class="font-body hover:text-accent transition-colors"
+                    style="color: #e8e8f0"
+                    >ahmadhanif13125@gmail.com</a
+                  ><br />
+                  <a
+                    href="mailto:hello@yourname.dev"
+                    class="font-body hover:text-accent transition-colors"
+                    style="color: #e8e8f0"
+                    >izzah13125@gmail.com</a
+                  >
+                </div>
+                <div>
+                  <div
+                    class="font-mono text-xs mb-1"
+                    style="color: #3a3a50; letter-spacing: 0.1em"
+                  >
+                    SOCIALS
+                  </div>
+                  <div class="flex gap-5">
+                    <a
+                      href="#"
+                      class="font-mono text-sm hover:text-accent transition-colors"
+                      style="color: #6b6b88"
+                      >GitHub</a
+                    >
+                    <a
+                      href="#"
+                      class="font-mono text-sm hover:text-accent transition-colors"
+                      style="color: #6b6b88"
+                      >LinkedIn</a
+                    >
+                    <a
+                      href="#"
+                      class="font-mono text-sm hover:text-accent transition-colors"
+                      style="color: #6b6b88"
+                      >Instagram</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: form -->
+            <div class="reveal reveal-delay-2">
+              <div
+                style="
+                  border: 1px solid #1e1e2a;
+                  padding: 36px;
+                  background: #111118;
+                "
+              >
+                <div class="space-y-4">
+                  <div class="grid grid-cols-2 gap-4">
+                    <div>
+                      <label
+                        class="font-mono text-xs block mb-2"
+                        style="color: #3a3a50; letter-spacing: 0.1em"
+                        >NAME</label
+                      >
+                      <input type="text" placeholder="Your name" />
+                    </div>
+                    <div>
+                      <label
+                        class="font-mono text-xs block mb-2"
+                        style="color: #3a3a50; letter-spacing: 0.1em"
+                        >EMAIL</label
+                      >
+                      <input type="email" placeholder="your@email.com" />
+                    </div>
+                  </div>
+                  <div>
+                    <label
+                      class="font-mono text-xs block mb-2"
+                      style="color: #3a3a50; letter-spacing: 0.1em"
+                      >SUBJECT</label
+                    >
+                    <input type="text" placeholder="What's this about?" />
+                  </div>
+                  <div>
+                    <label
+                      class="font-mono text-xs block mb-2"
+                      style="color: #3a3a50; letter-spacing: 0.1em"
+                      >MESSAGE</label
+                    >
+                    <textarea
+                      placeholder="Tell me about your project..."
+                      rows="5"
+                    ></textarea>
+                  </div>
+                  <button
+                    class="btn-magnetic w-full justify-center mt-4"
+                    onclick="
+                      this.querySelector('span').textContent = 'Message sent ✓'
+                    "
+                  >
+                    <span>Send Message →</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      style="
+        border-top: 1px solid #1e1e2a;
+        padding: 32px 64px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        background: #0c0c12;
+      "
+    >
+      <div
+        class="font-mono text-xs"
+        style="color: #3a3a50; letter-spacing: 0.1em"
+      >
+        © 2025 YOUR NAME — ALL RIGHTS RESERVED
+      </div>
+      <div class="font-mono text-xs" style="color: #3a3a50; letter-spacing: 0.1em">
+        MADE WITH PRECISION IN MAKASSAR
+      </div>
+    </footer>
+
+    <!-- Custom Scripts -->
+    <script src="main.js"></script>
+  </body>
+</html>
