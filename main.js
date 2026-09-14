@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(this);
             
             // Kirim via fetch ke endpoint AJAX FormSubmit
-            fetch('https://formsubmit.co/ajax/ahmadhanif13125@gmail.com', {
+            fetch('https://formsubmit.co/ajax/izzah13125@gmail.com', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json' // Meminta response dalam bentuk JSON
