@@ -962,19 +962,9 @@
                   background: #111118;
                 "
               >
-                <!-- Form Tag Ditambahkan Di Sini -->
-                <form
-                  action="https://formsubmit.co/ahmadhanif13125@gmail.com"
-                  method="POST"
-                  class="space-y-4"
-                >
-                  <input
-                    type="hidden"
-                    name="_next"
-                    value="https://khanifdev.my.id/"
-                  />
-
-                  <!-- Menonaktifkan captcha (opsional) -->
+                <!-- Form menggunakan ID untuk ditangkap JS (tanpa atribut action) -->
+                <form id="contact-form" class="space-y-4">
+                  <!-- Opsional: menonaktifkan captcha -->
                   <input type="hidden" name="_captcha" value="false" />
 
                   <div class="grid grid-cols-2 gap-4">
@@ -1036,6 +1026,7 @@
                     ></textarea>
                   </div>
                   <button
+                    id="submit-btn"
                     type="submit"
                     class="btn-magnetic w-full justify-center mt-4"
                   >

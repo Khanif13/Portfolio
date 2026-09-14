@@ -42,3 +42,65 @@ document.querySelectorAll('.btn-magnetic').forEach(btn => {
   });
   btn.addEventListener('mouseleave', () => btn.style.transform = '');
 });
+
+// ─── Contact Form AJAX Submission ─────────────
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Mencegah halaman refresh
+            
+            const btn = document.getElementById('submit-btn');
+            const btnText = btn.querySelector('span');
+            
+            // Simpan text asli
+            const originalText = btnText.textContent;
+            
+            // Ubah state tombol menjadi loading
+            btnText.textContent = 'Sending...';
+            btn.style.pointerEvents = 'none';
+            btn.style.opacity = '0.7';
+            
+            // Ambil data form
+            const formData = new FormData(this);
+            
+            // Kirim via fetch ke endpoint AJAX FormSubmit
+            fetch('https://formsubmit.co/ajax/ahmadhanif13125@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json' // Meminta response dalam bentuk JSON
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.success) {
+                    // Sukses
+                    btnText.textContent = 'Message sent ✓';
+                    btnText.style.color = '#c8f05a';
+                    contactForm.reset();
+                } else {
+                    // Gagal dari sisi API
+                    btnText.textContent = 'Failed to send.';
+                    btnText.style.color = '#ff5f56';
+                }
+            })
+            .catch(error => {
+                // Error network/fetch
+                console.error('Error:', error);
+                btnText.textContent = 'Error occurred.';
+                btnText.style.color = '#ff5f56';
+            })
+            .finally(() => {
+                // Kembalikan tombol seperti semula setelah 3 detik
+                setTimeout(() => {
+                    btnText.textContent = originalText;
+                    btnText.style.color = '';
+                    btn.style.pointerEvents = 'auto';
+                    btn.style.opacity = '1';
+                }, 3000);
+            });
+        });
+    }
+});
