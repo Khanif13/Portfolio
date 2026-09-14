@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Custom Cursor -->
-    <div id="cursor"></div>
-    <div id="cursor-ring"></div>
+    <!-- Custom Cursor (Hidden on mobile to prevent touch issues) -->
+    <div id="cursor" class="hidden md:block"></div>
+    <div id="cursor-ring" class="hidden md:block"></div>
 
     <!-- Loading Screen -->
     <div id="loader">
@@ -57,7 +57,7 @@
 
     <!-- Navigation -->
     <nav
-      class="fixed top-0 left-0 right-0 z-50 px-8 py-5 flex items-center justify-between"
+      class="fixed top-0 left-0 right-0 z-50 px-6 md:px-16 py-5 flex items-center justify-between"
       style="
         background: linear-gradient(
           to bottom,
@@ -106,7 +106,7 @@
       <!-- HERO -->
       <section
         id="hero"
-        class="relative min-h-screen flex flex-col justify-end pb-20 px-8 md:px-16 overflow-hidden"
+        class="relative min-h-screen flex flex-col justify-end pb-20 px-6 md:px-16 overflow-hidden"
       >
         <!-- Ambient orbs -->
         <div
@@ -161,13 +161,13 @@
 
         <!-- Corner labels -->
         <div
-          class="font-mono text-xs absolute top-24 left-8 md:left-16"
+          class="font-mono text-xs absolute top-28 md:top-24 left-6 md:left-16"
           style="color: #3a3a50; letter-spacing: 0.12em"
         >
           ASPIRING DEVELOPER
         </div>
         <div
-          class="font-mono text-xs absolute top-24 right-8 md:right-16 text-right"
+          class="hidden sm:block font-mono text-xs absolute top-28 md:top-24 right-6 md:right-16 text-right"
           style="color: #3a3a50; letter-spacing: 0.12em"
         >
           AVAILABLE FOR WORK
@@ -175,21 +175,20 @@
 
         <!-- Main headline -->
         <div style="position: relative; z-index: 2">
-          <div class="section-tag mb-6 reveal">[ 01 — HERO ]</div>
+          <div class="section-tag mb-6 reveal mt-12 md:mt-0">[ 01 — HERO ]</div>
           <h1
-            class="font-display font-extrabold leading-none mb-6 reveal reveal-delay-1 glitch max-w-4xl"
+            class="font-display font-extrabold leading-tight md:leading-none mb-6 reveal reveal-delay-1 glitch max-w-4xl"
             data-text="Ahmad Khanif Izzah Arifin"
             style="
-              font-size: clamp(2rem, 6vw, 5.5rem);
+              font-size: clamp(2.5rem, 8vw, 5.5rem);
               color: #e8e8f0;
               letter-spacing: -0.04em;
-              line-height: 1.1;
             "
           >
             Ahmad Khanif Izzah Arifin
           </h1>
           <p
-            class="font-body text-lg md:text-xl reveal reveal-delay-2 max-w-2xl"
+            class="font-body text-base md:text-xl reveal reveal-delay-2 max-w-2xl"
             style="color: #6b6b88; line-height: 1.7"
           >
             I am an aspiring Developer from Universitas Sulawesi Barat.<br />
@@ -198,7 +197,9 @@
               <span style="color: #c8f05a">Majene, Indonesia</span>.</span
             >
           </p>
-          <div class="flex items-center gap-6 mt-10 reveal reveal-delay-3">
+          <div
+            class="flex items-center gap-6 mt-8 md:mt-10 reveal reveal-delay-3"
+          >
             <a href="#projects" class="btn-magnetic"
               ><span>View Work →</span></a
             >
@@ -300,7 +301,7 @@
         "
       >
         <div
-          class="animate-marquee whitespace-nowrap inline-flex gap-16"
+          class="animate-marquee whitespace-nowrap inline-flex gap-8 md:gap-16"
           style="
             font-family: &quot;Syne&quot;, sans-serif;
             font-weight: 700;
@@ -337,9 +338,9 @@
         </div>
       </div>
 
-      <section id="about" class="px-8 md:px-16 py-32 relative">
+      <section id="about" class="px-6 md:px-16 py-24 md:py-32 relative">
         <div class="max-w-6xl mx-auto">
-          <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
               <div class="section-tag mb-6 reveal">[ 02 — ABOUT ]</div>
               <h2
@@ -357,16 +358,16 @@
               </h2>
               <div class="space-y-5 reveal reveal-delay-2">
                 <p
-                  class="font-body"
-                  style="color: #6b6b88; line-height: 1.9; font-size: 1rem"
+                  class="font-body text-base md:text-lg"
+                  style="color: #6b6b88; line-height: 1.9"
                 >
                   I'm an aspiring developer with a strong bias toward clean
                   architecture, performance, and developer experience. I thrive
                   at the intersection of backend logic and frontend craft.
                 </p>
                 <p
-                  class="font-body"
-                  style="color: #6b6b88; line-height: 1.9; font-size: 1rem"
+                  class="font-body text-base md:text-lg"
+                  style="color: #6b6b88; line-height: 1.9"
                 >
                   From designing a database schema to shipping a polished UI — I
                   own the full delivery chain. I believe good software is
@@ -374,8 +375,16 @@
                 </p>
               </div>
 
-              <div class="grid grid-cols-3 gap-4 mt-12 reveal reveal-delay-3">
-                <div style="border-top: 1px solid #1e1e2a; padding-top: 16px">
+              <div
+                class="grid grid-cols-2 gap-4 mt-12 reveal reveal-delay-3 w-fit"
+              >
+                <div
+                  style="
+                    border-top: 1px solid #1e1e2a;
+                    padding-top: 16px;
+                    padding-right: 32px;
+                  "
+                >
                   <div
                     class="font-display font-bold text-3xl"
                     style="color: #c8f05a"
@@ -389,7 +398,13 @@
                     YEARS EXP
                   </div>
                 </div>
-                <div style="border-top: 1px solid #1e1e2a; padding-top: 16px">
+                <div
+                  style="
+                    border-top: 1px solid #1e1e2a;
+                    padding-top: 16px;
+                    padding-right: 32px;
+                  "
+                >
                   <div
                     class="font-display font-bold text-3xl"
                     style="color: #c8f05a"
@@ -406,8 +421,9 @@
               </div>
             </div>
 
-            <div class="reveal reveal-delay-2">
+            <div class="reveal reveal-delay-2 mt-8 md:mt-0">
               <div
+                class="w-full md:w-11/12 ml-auto"
                 style="
                   position: relative;
                   aspect-ratio: 3/4;
@@ -477,14 +493,12 @@
               </div>
 
               <div
+                class="w-full md:w-11/12 ml-auto grid grid-cols-1 sm:grid-cols-2 gap-4"
                 style="
                   background: #111118;
                   border: 1px solid #1e1e2a;
                   border-top: 0;
                   padding: 20px 24px;
-                  display: grid;
-                  grid-template-columns: 1fr 1fr;
-                  gap: 12px;
                 "
               >
                 <div>
@@ -527,7 +541,7 @@
 
       <section
         id="projects"
-        class="px-8 md:px-16 py-32"
+        class="px-6 md:px-16 py-24 md:py-32"
         style="background: #0c0c12; border-top: 1px solid #1e1e2a"
       >
         <div class="max-w-6xl mx-auto text-center">
@@ -544,11 +558,11 @@
           </h2>
 
           <div
-            class="mt-16 reveal reveal-delay-2 flex flex-col items-center justify-center p-12"
+            class="mt-12 md:mt-16 reveal reveal-delay-2 flex flex-col items-center justify-center p-8 md:p-12"
             style="
               background: #111118;
               border: 1px dashed #1e1e2a;
-              min-height: 300px;
+              min-height: 250px;
             "
           >
             <div
@@ -586,7 +600,7 @@
               Under Construction
             </h3>
             <p
-              class="font-body text-sm max-w-md"
+              class="font-body text-sm max-w-md mx-auto"
               style="color: #6b6b88; line-height: 1.7"
             >
               I'm currently curating and documenting my recent projects. Check
@@ -599,13 +613,13 @@
 
       <section
         id="skills"
-        class="px-8 md:px-16 py-32"
+        class="px-6 md:px-16 py-24 md:py-32"
         style="border-top: 1px solid #1e1e2a"
       >
         <div class="max-w-6xl mx-auto">
           <div class="section-tag mb-4 reveal">[ 04 — SKILLS ]</div>
           <h2
-            class="font-display font-bold mb-16 reveal reveal-delay-1"
+            class="font-display font-bold mb-12 md:mb-16 reveal reveal-delay-1"
             style="
               font-size: clamp(2rem, 5vw, 3.5rem);
               color: #e8e8f0;
@@ -615,10 +629,12 @@
             Tech Stack
           </h2>
 
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8"
+          >
             <div class="reveal">
               <div
-                class="font-mono text-xs mb-6 flex items-center gap-3"
+                class="font-mono text-xs mb-4 md:mb-6 flex items-center gap-3"
                 style="color: #c8f05a; letter-spacing: 0.12em"
               >
                 <span
@@ -655,7 +671,7 @@
 
             <div class="reveal reveal-delay-1">
               <div
-                class="font-mono text-xs mb-6 flex items-center gap-3"
+                class="font-mono text-xs mb-4 md:mb-6 flex items-center gap-3"
                 style="color: #c8f05a; letter-spacing: 0.12em"
               >
                 <span
@@ -678,7 +694,7 @@
 
             <div class="reveal reveal-delay-2">
               <div
-                class="font-mono text-xs mb-6 flex items-center gap-3"
+                class="font-mono text-xs mb-4 md:mb-6 flex items-center gap-3"
                 style="color: #c8f05a; letter-spacing: 0.12em"
               >
                 <span
@@ -704,7 +720,7 @@
 
             <div class="reveal reveal-delay-3">
               <div
-                class="font-mono text-xs mb-6 flex items-center gap-3"
+                class="font-mono text-xs mb-4 md:mb-6 flex items-center gap-3"
                 style="color: #c8f05a; letter-spacing: 0.12em"
               >
                 <span
@@ -732,21 +748,21 @@
             </div>
           </div>
 
-          <div class="mt-24">
+          <div class="mt-20 md:mt-24">
             <h3
-              class="font-display font-bold text-2xl mb-12 reveal"
+              class="font-display font-bold text-2xl mb-10 md:mb-12 reveal"
               style="color: #e8e8f0"
             >
               Experience
             </h3>
             <div class="space-y-8">
               <div
-                class="timeline-item reveal pl-8 pb-8"
+                class="timeline-item reveal pl-6 md:pl-8 pb-8"
                 style="position: relative"
               >
                 <div class="timeline-dot"></div>
                 <div
-                  class="flex flex-wrap items-start justify-between gap-2 mb-2"
+                  class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2"
                 >
                   <div>
                     <h4
@@ -761,7 +777,7 @@
                   </div>
 
                   <span
-                    class="font-mono text-xs px-3 py-1"
+                    class="font-mono text-xs px-3 py-1 w-fit mt-1 sm:mt-0"
                     style="
                       border: 1px solid #1e1e2a;
                       color: #3a3a50;
@@ -781,12 +797,12 @@
               </div>
 
               <div
-                class="timeline-item reveal reveal-delay-1 pl-8 pb-8"
+                class="timeline-item reveal reveal-delay-1 pl-6 md:pl-8 pb-8"
                 style="position: relative"
               >
                 <div class="timeline-dot"></div>
                 <div
-                  class="flex flex-wrap items-start justify-between gap-2 mb-2"
+                  class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2"
                 >
                   <div>
                     <h4
@@ -800,7 +816,7 @@
                     </div>
                   </div>
                   <span
-                    class="font-mono text-xs px-3 py-1"
+                    class="font-mono text-xs px-3 py-1 w-fit mt-1 sm:mt-0"
                     style="
                       border: 1px solid #1e1e2a;
                       color: #3a3a50;
@@ -820,12 +836,12 @@
               </div>
 
               <div
-                class="timeline-item reveal reveal-delay-2 pl-8 pb-8"
+                class="timeline-item reveal reveal-delay-2 pl-6 md:pl-8 pb-8"
                 style="position: relative"
               >
                 <div class="timeline-dot"></div>
                 <div
-                  class="flex flex-wrap items-start justify-between gap-2 mb-2"
+                  class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2"
                 >
                   <div>
                     <h4
@@ -839,7 +855,7 @@
                     </div>
                   </div>
                   <span
-                    class="font-mono text-xs px-3 py-1"
+                    class="font-mono text-xs px-3 py-1 w-fit mt-1 sm:mt-0"
                     style="
                       border: 1px solid #1e1e2a;
                       color: #3a3a50;
@@ -865,7 +881,7 @@
       <!-- CONTACT -->
       <section
         id="contact"
-        class="px-8 md:px-16 py-32 relative"
+        class="px-6 md:px-16 py-24 md:py-32 relative"
         style="border-top: 1px solid #1e1e2a"
       >
         <div
@@ -879,7 +895,7 @@
           "
         ></div>
         <div class="max-w-6xl mx-auto">
-          <div class="grid md:grid-cols-2 gap-16 items-start">
+          <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
             <!-- Left -->
             <div>
               <div class="section-tag mb-4 reveal">[ 05 — CONTACT ]</div>
@@ -895,13 +911,15 @@
                 Let's build<br /><span style="color: #c8f05a">something.</span>
               </h2>
               <p
-                class="font-body mb-12 reveal reveal-delay-2"
+                class="font-body mb-10 md:mb-12 reveal reveal-delay-2"
                 style="color: #6b6b88; line-height: 1.9"
               >
                 Open to full-time roles, freelance projects, and interesting
                 conversations. If you have a problem worth solving, let's talk.
               </p>
-              <div class="space-y-6 reveal reveal-delay-3">
+              <div
+                class="space-y-6 reveal reveal-delay-3 flex flex-col sm:flex-row sm:gap-12 md:flex-col md:gap-0"
+              >
                 <div>
                   <div
                     class="font-mono text-xs mb-1"
@@ -911,18 +929,18 @@
                   </div>
                   <a
                     href="mailto:ahmadhanif13125@gmail.com"
-                    class="font-body hover:text-accent transition-colors"
-                    style="color: #e8e8f0"
+                    class="font-body text-sm md:text-base hover:text-accent transition-colors"
+                    style="color: #e8e8f0; word-break: break-all"
                     >ahmadhanif13125@gmail.com</a
                   ><br />
                   <a
                     href="mailto:izzah13125@gmail.com"
-                    class="font-body hover:text-accent transition-colors"
-                    style="color: #e8e8f0"
+                    class="font-body text-sm md:text-base hover:text-accent transition-colors"
+                    style="color: #e8e8f0; word-break: break-all"
                     >izzah13125@gmail.com</a
                   >
                 </div>
-                <div>
+                <div class="mt-6 sm:mt-0 md:mt-6">
                   <div
                     class="font-mono text-xs mb-1"
                     style="color: #3a3a50; letter-spacing: 0.1em"
@@ -956,18 +974,15 @@
             <!-- Right: form -->
             <div class="reveal reveal-delay-2">
               <div
-                style="
-                  border: 1px solid #1e1e2a;
-                  padding: 36px;
-                  background: #111118;
-                "
+                class="p-6 sm:p-8 md:p-9"
+                style="border: 1px solid #1e1e2a; background: #111118"
               >
-                <!-- Form menggunakan ID untuk ditangkap JS (tanpa atribut action) -->
                 <form id="contact-form" class="space-y-4">
-                  <!-- Opsional: menonaktifkan captcha -->
                   <input type="hidden" name="_captcha" value="false" />
+                  <input type="text" name="_honey" style="display: none" />
 
-                  <div class="grid grid-cols-2 gap-4">
+                  <!-- Form Grid diperbarui untuk Mobile (Turun ke bawah di HP, sejajar di Tablet+) -->
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label
                         class="font-mono text-xs block mb-2"
@@ -979,7 +994,8 @@
                         name="name"
                         placeholder="Your name"
                         required
-                        class="w-full bg-[#0c0c12] border border-[#1e1e2a] text-[#e8e8f0] p-3 focus:outline-none focus:border-[#c8f05a] transition-colors"
+                        minlength="3"
+                        class="w-full bg-[#0c0c12] border border-[#1e1e2a] text-[#e8e8f0] p-3 text-sm focus:outline-none focus:border-[#c8f05a] transition-colors"
                       />
                     </div>
                     <div>
@@ -993,7 +1009,8 @@
                         name="email"
                         placeholder="your@email.com"
                         required
-                        class="w-full bg-[#0c0c12] border border-[#1e1e2a] text-[#e8e8f0] p-3 focus:outline-none focus:border-[#c8f05a] transition-colors"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        class="w-full bg-[#0c0c12] border border-[#1e1e2a] text-[#e8e8f0] p-3 text-sm focus:outline-none focus:border-[#c8f05a] transition-colors"
                       />
                     </div>
                   </div>
@@ -1008,7 +1025,7 @@
                       name="subject"
                       placeholder="What's this about?"
                       required
-                      class="w-full bg-[#0c0c12] border border-[#1e1e2a] text-[#e8e8f0] p-3 focus:outline-none focus:border-[#c8f05a] transition-colors"
+                      class="w-full bg-[#0c0c12] border border-[#1e1e2a] text-[#e8e8f0] p-3 text-sm focus:outline-none focus:border-[#c8f05a] transition-colors"
                     />
                   </div>
                   <div>
@@ -1020,9 +1037,9 @@
                     <textarea
                       name="message"
                       placeholder="Tell me about your project..."
-                      rows="5"
+                      rows="4"
                       required
-                      class="w-full bg-[#0c0c12] border border-[#1e1e2a] text-[#e8e8f0] p-3 focus:outline-none focus:border-[#c8f05a] transition-colors"
+                      class="w-full bg-[#0c0c12] border border-[#1e1e2a] text-[#e8e8f0] p-3 text-sm focus:outline-none focus:border-[#c8f05a] transition-colors"
                     ></textarea>
                   </div>
                   <button
@@ -1040,30 +1057,22 @@
       </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer dengan Flexbox Responsif -->
     <footer
-      style="
-        border-top: 1px solid #1e1e2a;
-        padding: 32px 64px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        background: #0c0c12;
-      "
+      class="px-6 md:px-16 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left"
+      style="border-top: 1px solid #1e1e2a; background: #0c0c12"
     >
       <div
-        class="font-mono text-xs"
+        class="font-mono text-[10px] md:text-xs"
         style="color: #3a3a50; letter-spacing: 0.1em"
       >
         © 2025 AHMAD KHANIF IZZAH ARIFIN — ALL RIGHTS RESERVED
       </div>
       <div
-        class="font-mono text-xs"
+        class="font-mono text-[10px] md:text-xs"
         style="color: #3a3a50; letter-spacing: 0.1em"
       >
-        MADE WITH PRECISION IN Majene
+        MADE WITH PRECISION IN MAJENE
       </div>
     </footer>
 
