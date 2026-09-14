@@ -92,7 +92,6 @@
           style="color: #6b6b88; letter-spacing: 0.05em"
           >Skills</a
         >
-        <!-- <a href="#blog" class="nav-link font-body text-sm" style="color:#6b6b88; letter-spacing:0.05em;">Blog</a> -->
         <a
           href="#contact"
           class="nav-link font-body text-sm"
@@ -193,7 +192,7 @@
             class="font-body text-lg md:text-xl reveal reveal-delay-2 max-w-2xl"
             style="color: #6b6b88; line-height: 1.7"
           >
-            Iam an aspiring Developer from Universitas Sulawesi Barat.<br />
+            I am an aspiring Developer from Universitas Sulawesi Barat.<br />
             <span style="color: #a0a0b8"
               >Currently crafting things that matter from
               <span style="color: #c8f05a">Majene, Indonesia</span>.</span
@@ -206,7 +205,7 @@
             <a
               href="#contact"
               class="font-mono text-sm hover:text-accent transition-colors"
-              style="color: #6b6b88; letter-spacing: 0.05em; color: #6b6b88"
+              style="color: #6b6b88; letter-spacing: 0.05em"
               >Let's talk</a
             >
           </div>
@@ -911,13 +910,13 @@
                     EMAIL
                   </div>
                   <a
-                    href="mailto:hello@yourname.dev"
+                    href="mailto:ahmadhanif13125@gmail.com"
                     class="font-body hover:text-accent transition-colors"
                     style="color: #e8e8f0"
                     >ahmadhanif13125@gmail.com</a
                   ><br />
                   <a
-                    href="mailto:hello@yourname.dev"
+                    href="mailto:izzah13125@gmail.com"
                     class="font-body hover:text-accent transition-colors"
                     style="color: #e8e8f0"
                     >izzah13125@gmail.com</a
@@ -963,7 +962,15 @@
                   background: #111118;
                 "
               >
-                <div class="space-y-4">
+                <!-- Form Tag Ditambahkan Di Sini -->
+                <form
+                  action="https://formsubmit.co/ahmadhanif13125@gmail.com"
+                  method="POST"
+                  class="space-y-4"
+                >
+                  <!-- Menonaktifkan captcha (opsional) -->
+                  <input type="hidden" name="_captcha" value="false" />
+
                   <div class="grid grid-cols-2 gap-4">
                     <div>
                       <label
@@ -971,7 +978,13 @@
                         style="color: #3a3a50; letter-spacing: 0.1em"
                         >NAME</label
                       >
-                      <input type="text" placeholder="Your name" />
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Your name"
+                        required
+                        class="w-full bg-[#0c0c12] border border-[#1e1e2a] text-[#e8e8f0] p-3 focus:outline-none focus:border-[#c8f05a] transition-colors"
+                      />
                     </div>
                     <div>
                       <label
@@ -979,7 +992,13 @@
                         style="color: #3a3a50; letter-spacing: 0.1em"
                         >EMAIL</label
                       >
-                      <input type="email" placeholder="your@email.com" />
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="your@email.com"
+                        required
+                        class="w-full bg-[#0c0c12] border border-[#1e1e2a] text-[#e8e8f0] p-3 focus:outline-none focus:border-[#c8f05a] transition-colors"
+                      />
                     </div>
                   </div>
                   <div>
@@ -988,7 +1007,13 @@
                       style="color: #3a3a50; letter-spacing: 0.1em"
                       >SUBJECT</label
                     >
-                    <input type="text" placeholder="What's this about?" />
+                    <input
+                      type="text"
+                      name="subject"
+                      placeholder="What's this about?"
+                      required
+                      class="w-full bg-[#0c0c12] border border-[#1e1e2a] text-[#e8e8f0] p-3 focus:outline-none focus:border-[#c8f05a] transition-colors"
+                    />
                   </div>
                   <div>
                     <label
@@ -997,19 +1022,20 @@
                       >MESSAGE</label
                     >
                     <textarea
+                      name="message"
                       placeholder="Tell me about your project..."
                       rows="5"
+                      required
+                      class="w-full bg-[#0c0c12] border border-[#1e1e2a] text-[#e8e8f0] p-3 focus:outline-none focus:border-[#c8f05a] transition-colors"
                     ></textarea>
                   </div>
                   <button
+                    type="submit"
                     class="btn-magnetic w-full justify-center mt-4"
-                    onclick="
-                      this.querySelector('span').textContent = 'Message sent ✓'
-                    "
                   >
                     <span>Send Message →</span>
                   </button>
-                </div>
+                </form>
               </div>
             </div>
           </div>
